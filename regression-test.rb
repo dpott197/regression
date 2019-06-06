@@ -11,28 +11,28 @@ x2 = [  18,   14,   24,   22,    8,   16,    1,    0]
 xs = y.count.times.collect{|i| [1,x1[i],x2[i]]}
 ys = y.each.collect{|y| [y]}
 
-@regression = Regression.new(xs,ys)
+puts @regression = Regression.new(xs,ys)
 
-@regression.degrees_of_freedom
+puts @regression.degrees_of_freedom
 # => 5
 
-@regression.estimate(Matrix[[1,40,10]])
+puts @regression.estimate(Matrix[[1,40,10]])
 # => 10.333132089815114
 
-@regression.distance_value(Matrix[[1,40,10]],1)
+puts @regression.distance_value(Matrix[[1,40,10]])
 # => 0.2156687027981243
 
-@regression.normalize(Matrix[[1,40,10]],10.333132089815114)
-# => 0.5
+puts @regression.normalize(Matrix[[1,40,10]],10.333132089815114)
+# =>  0.5
 
-@regression.normalize(Matrix[[1,40,10]],9.293)
+puts @regression.normalize(Matrix[[1,40,10]],9.293)
 # => 0.975
 
-@regression.normalize(Matrix[[1,40,10]],11.374)
+puts @regression.normalize(Matrix[[1,40,10]],11.374)
 # => 0.025
 
-@regression.limit(Matrix[[1,40,10]])
+puts @regression.limit(Matrix[[1,40,10]])
 #=> 9.29276762699449
 
-@regression.limit(Matrix[[1,40,10]],0.975)
+puts @regression.limit(Matrix[[1,40,10]],0.975)
 #=> 11.37349655263574
